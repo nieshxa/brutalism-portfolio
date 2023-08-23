@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Jua&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Jua&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 * {
   box-sizing: border-box;
@@ -17,11 +17,13 @@
   --k2d: "K2D", sans-serif;
   --jua: "Jua", sans-serif;
   --jetbrains: "JetBrains Mono", monospace;
+  --ibm: "IBM Plex Mono", monospace;
 }
 body {
   height: 100vh;
   background-color: var(--black);
   overflow-y: hidden;
+  cursor: default;
 }
 .header {
   height: 10vh;
@@ -36,7 +38,13 @@ body {
   color: var(--black);
   font-family: var(--k2d);
   font-weight: 800;
+  transition: 0.3s ease;
   font-size: 3vh;
+}
+.header a:hover {
+  text-decoration: underline;
+  transition: 0.3s ease;
+  color: var(--violet);
 }
 .content {
   height: 90%;
@@ -88,6 +96,12 @@ body {
   box-shadow: 3vh 3vh 0 0 var(--black);
   rotate: -5deg;
   align-self: center;
+  transition: all 0.3s ease-in-out;
+}
+.greetings .job:hover {
+  background-color: var(--pink);
+  color: var(--black);
+  transition: all 0.3s ease-in-out;
 }
 
 .content .mypicture {
@@ -102,7 +116,7 @@ body {
 .content .mypicture .pic {
   background-color: var(--teal);
   border: solid var(--black) 0.5vh;
-  box-shadow: -3vh 3vh 0 0 var(--black);
+  box-shadow: 3vh 3vh 0 0 var(--black);
   padding: 6vh;
   width: fit-content;
   display: flex;
@@ -117,6 +131,11 @@ body {
   padding: 1vh 2vh;
   box-shadow: -0.5vh 0.5vh 0 0 var(--tealshadow);
   margin-top: 2vh;
+  transition: all 0.3s ease-in-out;
+}
+.content .mypicture .name:hover {
+  rotate: -5deg;
+  transition: all 0.3s ease-in-out;
 }
 .content .mypicture .pic img {
   width: 25vw;
@@ -168,6 +187,114 @@ body {
   flex-direction: column;
   font-weight: 600;
 }
+#projects {
+  background-color: var(--pastelgreen);
+  padding: 10vh 5vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+}
+.project {
+  display: flex;
+  gap: 2vh;
+  align-items: center;
+}
+.project .img {
+  border: solid var(--black) 0.5vh;
+  padding: 3vh;
+  padding-top: 9vh;
+  width: fit-content;
+  background-color: var(--white);
+  box-shadow: 2vh 2vh 0 0 var(--black);
+}
+.project .img img {
+  width: 25vw;
+  border: solid var(--black) 0.5vh;
+}
+.project .details {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.project .details:nth-of-type(2) {
+  font-family: var(--ibm);
+  font-weight: 700;
+  font-size: 4.8vh;
+  width: 60%;
+  justify-content: center;
+}
+.description {
+  text-align: center;
+  background-color: var(--pastelpink);
+  border: solid var(--black) 0.5vh;
+  border-radius: 2vh;
+  box-shadow: 2vh 2vh 0 0 var(--black);
+  padding: 5vh;
+}
+.used,
+.link {
+  font-size: 3.5vh;
+}
+.link a {
+  color: var(--violet);
+}
+#contact {
+  font-family: var(--k2d);
+  background-color: var(--teal);
+  font-weight: 900;
+  font-size: 4.5vh;
+  padding: 10vh;
+  display: flex;
+  flex-direction: column;
+  gap: 8vh;
+  min-height: 90vh;
+  justify-content: center;
+}
+.getintouch {
+  padding: 2vh 5vh;
+  padding-right: 15vh;
+  border-radius: 2vh;
+  background-color: var(--white);
+  border: solid var(--black) 0.5vh;
+  box-shadow: 1vh 1vh 0 0 var(--black);
+  width: fit-content;
+  align-self: flex-end;
+}
+.socials {
+  background-color: #fcddec;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 40vw;
+  border: solid var(--black) 0.5vh;
+  box-shadow: 1vh 1vh 0 0 var(--black);
+  border-radius: 2vh;
+  padding: 0 2.5vh;
+  align-self: center;
+}
+.socials iconify-icon {
+  font-size: 10vh;
+  padding: 2vh 1vh;
+  transition: 0.3s ease-in-out;
+}
+.socials iconify-icon:hover {
+  color: var(--violet);
+  transition: 0.3s ease-in-out;
+}
+.socials a {
+  color: var(--black);
+}
+.dlcv {
+  color: var(--black);
+  text-decoration: none;
+  background-color: #0acf83;
+  width: fit-content;
+  box-shadow: 1vh 1vh 0 0 var(--black);
+  border-radius: 2vh;
+  border: solid var(--black) 0.5vh;
+  padding: 2vh 5vh;
+}
 @media screen and (max-width: 900px) {
   .content #home,
   .content #skills {
@@ -204,20 +331,41 @@ body {
   .skill:nth-of-type(4) {
     order: 1;
   }
+  .project {
+    flex-direction: column;
+    gap: 5vh;
+  }
+  .project .details {
+    width: 100%;
+  }
+  .project .img img {
+    width: 75vw;
+  }
+  .project .details:nth-of-type(2) {
+    width: 90%;
+  }
+  .getintouch,
+  .dlcv {
+    align-self: center;
+  }
+  .socials {
+    width: fit-content;
+  }
+  .getintouch {
+    padding-right: 5vh;
+  }
+  .dlcv {
+    font-size: 3.5vh;
+  }
 }
 
 @media screen and (max-width: 600px) {
-  :root {
-    --jetbrains-font-size: 10px;
-    --jua-font-size: 8px;
-  }
-
   .header a {
     font-size: 2vh;
   }
 
   .greetings .intro {
-    font-size: 8vh;
+    font-size: 7vh;
   }
 
   .greetings .name {
@@ -229,7 +377,6 @@ body {
     padding: 4vh 8vh;
     box-shadow: 2vh 2vh 0 0 var(--black);
   }
-
   .mypicture .name {
     font-size: 2vh;
     padding: 0.5vh 1vh;
@@ -239,9 +386,5 @@ body {
   .skill.uiuxname,
   .skill.webdevname {
     font-size: 3.5vh;
-  }
-
-  .logo iconify-icon {
-    font-size: 6vh;
   }
 }

@@ -9,8 +9,11 @@
   --black: #000;
   --pastelgreen: #e8ffa8;
   --pastelpink: #f5b6f6;
+  --pink: #ef81a4;
   --white: #fff;
   --violet: #7901f1;
+  --teal: #a4f3de;
+  --tealshadow: #3db099;
   --k2d: "K2D", sans-serif;
   --jua: "Jua", sans-serif;
   --jetbrains: "JetBrains Mono", monospace;
@@ -18,6 +21,7 @@
 body {
   height: 100vh;
   background-color: var(--black);
+  overflow-y: hidden;
 }
 .header {
   height: 10vh;
@@ -34,14 +38,19 @@ body {
   font-weight: 800;
   font-size: 3vh;
 }
-
 .content {
   height: 90%;
   overflow-y: auto;
+}
+.content::-webkit-scrollbar {
+  display: none;
+}
+.content #home {
+  height: 100%;
   display: flex;
   gap: 0.625vh;
 }
-.content::-webkit-scrollbar {
+#home::-webkit-scrollbar {
   display: none;
 }
 
@@ -78,10 +87,161 @@ body {
   border: solid var(--black) 0.5vh;
   box-shadow: 3vh 3vh 0 0 var(--black);
   rotate: -5deg;
+  align-self: center;
 }
 
 .content .mypicture {
   background-color: var(--pastelpink);
   height: 100%;
   width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh 0;
+}
+.content .mypicture .pic {
+  background-color: var(--teal);
+  border: solid var(--black) 0.5vh;
+  box-shadow: -3vh 3vh 0 0 var(--black);
+  padding: 6vh;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.content .mypicture .name {
+  font-size: 3vh;
+  font-family: var(--jetbrains);
+  background-color: var(--pink);
+  width: fit-content;
+  padding: 1vh 2vh;
+  box-shadow: -0.5vh 0.5vh 0 0 var(--tealshadow);
+  margin-top: 2vh;
+}
+.content .mypicture .pic img {
+  width: 25vw;
+  height: 25vw;
+  object-fit: cover;
+  border: solid var(--black) 0.5vh;
+}
+.uiuxlogo {
+  grid-area: logoui;
+  background-color: var(--pastelpink);
+}
+.uiuxname {
+  grid-area: nameui;
+  background-color: var(--teal);
+}
+.webdevlogo {
+  grid-area: weblogo;
+  background-color: var(--pastelpink);
+}
+.webdevname {
+  grid-area: webui;
+  background-color: var(--teal);
+}
+.content #skills {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625vh;
+}
+#skills .skill {
+  width: calc(50% - 0.3125vh);
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skill.logo {
+  display: flex;
+  gap: 2vh;
+  flex-wrap: wrap;
+}
+.logo iconify-icon {
+  font-size: 9vh;
+}
+.skill.uiuxname,
+.skill.webdevname {
+  font-size: 5vh;
+  font-family: var(--jetbrains);
+  flex-direction: column;
+  font-weight: 600;
+}
+@media screen and (max-width: 900px) {
+  .content #home,
+  .content #skills {
+    flex-direction: column-reverse;
+    height: fit-content;
+    /* display: block; */
+  }
+
+  .content .greetings,
+  .content .mypicture {
+    width: 100%;
+  }
+  .content .mypicture .pic img {
+    width: 50vw;
+    height: 50vw;
+    object-fit: cover;
+  }
+  #skills .skill {
+    width: 100%;
+    padding: 10vh 0;
+  }
+  .skill:nth-of-type(1) {
+    order: 3;
+  }
+
+  .skill:nth-of-type(2) {
+    order: 4;
+  }
+
+  .skill:nth-of-type(3) {
+    order: 2;
+  }
+
+  .skill:nth-of-type(4) {
+    order: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --jetbrains-font-size: 10px;
+    --jua-font-size: 8px;
+  }
+
+  .header a {
+    font-size: 2vh;
+  }
+
+  .greetings .intro {
+    font-size: 8vh;
+  }
+
+  .greetings .name {
+    font-size: 2.5vh;
+  }
+
+  .greetings .job {
+    font-size: 4vh;
+    padding: 4vh 8vh;
+    box-shadow: 2vh 2vh 0 0 var(--black);
+  }
+
+  .mypicture .name {
+    font-size: 2vh;
+    padding: 0.5vh 1vh;
+    box-shadow: -0.25vh 0.25vh 0 0 var(--tealshadow);
+    margin-top: 1vh;
+  }
+  .skill.uiuxname,
+  .skill.webdevname {
+    font-size: 3.5vh;
+  }
+
+  .logo iconify-icon {
+    font-size: 6vh;
+  }
 }

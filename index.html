@@ -8,24 +8,65 @@
   </head>
   <body>
     <div class="header">
-      <a href="#">Home</a>
-      <a href="#">My Skills</a>
+      <a href="#home">Home</a>
+      <a href="#skills">My Skills</a>
       <a href="#">Projects</a>
       <a href="#">Contact</a>
     </div>
     <div class="content">
-      <div class="greetings">
-        <div class="intro">
-          Hello!
-          <iconify-icon
-            icon="fluent-emoji:waving-hand-light"
-            style="color: #ada"
-          ></iconify-icon>
+      <div id="home">
+        <div class="greetings">
+          <div class="intro">
+            Hello!
+            <iconify-icon
+              icon="fluent-emoji:waving-hand-light"
+              style="color: #ada"
+            ></iconify-icon>
+          </div>
+          <div class="name"><br />My name is Nicole. <br /><br />I am a...</div>
+          <div class="job">Frontend Developer & UI/UX Designer</div>
         </div>
-        <div class="name"><br />My name is Nicole. <br /><br />I am a...</div>
-        <div class="job">Frontend Developer</div>
+        <div class="mypicture">
+          <div class="pic">
+            <img src="./me.png" alt="myself" />
+            <div class="name">Nicole Santos</div>
+          </div>
+        </div>
       </div>
-      <div class="mypicture"></div>
+      <div id="skills">
+        <div class="uiuxlogo logo skill">
+          <iconify-icon icon="skill-icons:figma-light"></iconify-icon>
+        </div>
+        <div class="uiuxname skill">
+          UI/UX Design <br /><br />
+          <div>
+            <iconify-icon icon="openmoji:sparkles"></iconify-icon> Figma
+          </div>
+        </div>
+        <div class="webdevname skill">
+          Web Development
+          <div>
+            <div>
+              <iconify-icon icon="openmoji:sparkles"></iconify-icon> HTML
+            </div>
+            <div>
+              <iconify-icon icon="openmoji:sparkles"></iconify-icon> CSS
+            </div>
+            <div>
+              <iconify-icon icon="openmoji:sparkles"></iconify-icon> JavaScript
+            </div>
+            <div>
+              <iconify-icon icon="openmoji:sparkles"></iconify-icon> Bootstrap
+            </div>
+          </div>
+        </div>
+        <div class="webdevlogo logo skill">
+          <iconify-icon icon="skill-icons:html"></iconify-icon
+          ><iconify-icon icon="skill-icons:css"></iconify-icon
+          ><iconify-icon icon="skill-icons:javascript"></iconify-icon
+          ><iconify-icon icon="devicon:bootstrap"></iconify-icon>
+        </div>
+      </div>
     </div>
   </body>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
